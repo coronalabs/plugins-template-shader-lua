@@ -28,7 +28,6 @@ If you do not have access to BASH, see [Manual Project Creation](#manual-project
 Your new project should contain the following files and folders:
 
 * [build.sh](build.sh)
-* [create_project.sh](create_project.sh)
 * [lua/](lua/)
 	+ __Test Harness:__
 		+ [build.settings](lua/build.settings)
@@ -117,7 +116,7 @@ If you'd like to submit a plugin, there are a few more steps you need to take:
 This will create several files:
 
 * a `build/` folder
-* a `build.zip` that contains all the files in `build/`. This is the file you should submit.
+* a `build-{PLUGIN_NAME}.zip` that contains all the files in `build/`. This is the file you should submit.
 
 
 ## Appendix
