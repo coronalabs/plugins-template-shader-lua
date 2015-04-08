@@ -1,4 +1,4 @@
-# Project Templates for Shader Effect Plugins
+# Project Template for Shader Effect Plugins
 
 ## Overview
 
