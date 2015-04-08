@@ -103,6 +103,11 @@ If you'd like to submit a plugin, there are a few more steps you need to take:
 	* Verify that your shader code compiles on device
 	* Understand potential performance issues on lower-end devices.
 	* NOTE: Windows Phone 8 only supports precompiled shaders, so custom shader effects are not supported by those devices.
+3. Documentation
+	* Fork or clone [Doc Template for Shader Docs](https://github.com/coronalabs/plugins-template-shader-docs)
+	* Follow the [Instructions](https://github.com/coronalabs/plugins-template-shader-docs/blob/master/Instructions.markdown)
+4. Sample Code
+	* Post sample code online, e.g. github.
 
 ### Packaging Your Plugin
 
