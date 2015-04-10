@@ -1,12 +1,9 @@
 -- 
--- Abstract: CustomEffect sample app
+-- Abstract: PLUGIN_NAME Shader Effect Test Project
 -- 
 -- Sample code is MIT licensed, see http://www.coronalabs.com/links/code/license
 -- Copyright (C) 2015 Corona Labs Inc. All Rights Reserved.
 --
--- Supports Graphics 2.0
---
--- v1.0		2/4/2015
 ------------------------------------------------------------
 
 -- Setup
