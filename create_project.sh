@@ -49,6 +49,9 @@ echo "Copying files to ($DST_DIR)..."
 
 	# Remove this script from destination
 	rm -f "$DST_DIR"/create_project.sh
+
+	# Remove file for other platforms
+	rm -f "$DST_DIR"/*.bat
 echo "Done."
 
 #
