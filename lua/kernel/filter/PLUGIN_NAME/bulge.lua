@@ -27,10 +27,10 @@ P_COLOR vec4 FragmentKernel( P_UV vec2 texCoord )
 	texCoord = texCoord - 0.5;
 
 	// cartesian to polar coordinates
-	float r = length(texCoord);
-	float a = atan(texCoord.y, texCoord.x);
+	P_DEFAULT float r = length(texCoord);
+	P_DEFAULT float a = atan(texCoord.y, texCoord.x);
 
-	float rOriginal = r;
+	P_DEFAULT float rOriginal = r;
 
 	// distort
 	r = r*r; // bulge
