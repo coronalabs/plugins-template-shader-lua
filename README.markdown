@@ -11,7 +11,7 @@ With this project, you can package a single effect or multiple effects together 
 
 ### Creating your project
 
-To create a new project, we have provided helper scripts that can do the necessary file renaming and string replacements for both Mac OS X and Windows. If you'd like to do this manually, see [Manual Project Creation](#manual-project-creation).
+To create a new project, we have provided helper scripts that can do the necessary file renaming and string replacements for both Mac OS X and Windows.
 
 #### Mac
 
@@ -28,7 +28,7 @@ Run the script [create_project.bat](create_project.bat) in the command prompt:
 
 ```
 cd \path\to\this\repo\
-.\create_project.bat \path\to\new\project\folder PLUGIN_NAME
+create_project.bat \path\to\new\project\folder PLUGIN_NAME
 ```
 
 
@@ -36,43 +36,34 @@ cd \path\to\this\repo\
 
 Your new project should contain the following files and folders:
 
-* [build.sh](build.sh) (Mac-only)
-* [build.bat](build.bat) (Windows-only)
-* [lua/](lua/)
-	+ __Test Harness:__
-		+ [build.settings](lua/build.settings)
-		+ [config.lua](lua/config.lua)
-		+ [Image1.jpg](lua/Image1.jpg)
-		+ [Image2.jpg](lua/Image2.jpg)
-		+ [main.lua](lua/main.lua)
-	+ __Shader Effect:__
-		+ [kernel/](lua/kernel/)
-			- These are stub/sample effects. See [Shader Effect Files](#shader-effect-files) below.
-* [metadata.json](metadata.json)
-* [README.markdown](README.markdown)
-
+* [bin/](bin/): Core binaries required by the build process.
++ [build.bat](build.bat): Compiles and packages the plugin for distribution using Windows.
++ [build.sh](build.sh): Compiles and packages the plugin for distribution using a Mac.
+* [metadata.json](metadata.json): Contains publisher information, including contact and website data.
+* [plugins/VERSION/lua/](plugins/2015.2560/lua/)
+	+ The files here are included for users building with the Simulator build VERSION or higher.
+	+ As an example, plugins/2015.2560/lua/ requires a minimum SDK version 2015.2560 to be included.
 
 ## Shader Effect Development
 
 ### Workflow
 
-For workflow convenience, the test harness and shader effect code are integrated to simplify shader effect development:
+For workflow convenience, copy the shader effect code into your sample code. 
 
-* The test harness is in the [lua/](lua/) folder, including the [lua/main.lua](lua/main.lua) file.
-* The shader effects are in the subfolder of the test harness: [lua/kernel/](lua/kernel/).
+* The test harness is in the [samples/](samples/) folder, including the [samples/main.lua](samples/main.lua) file.
+* The shader effects are located at: [plugins/VERSION/lua/kernel/](plugins/VERSION/lua/kernel/).
 
-That way, you can open the test harness in the Corona Simulator, modify your shader effects, and preview those changes immediately.
+By copying or moving `plugins/VERSION/lua/kernel` to `samples/kernel`, you can open the test harness in the Corona Simulator, modify your shader effects, and preview those changes immediately.
 
 You can also open the test harness in [CoronaViewer](https://github.com/coronalabs/CoronaViewer) to preview those changes immediately on a device.
-
 
 ### Shader Effect Files
 
 The new project provides sample implementations of all 3 kinds of effects: 
 
-* Generator: [gradient.lua](lua/kernel/generator/PLUGIN_NAME/gradient.lua)
-* Filter: [bulge.lua](lua/kernel/filter/PLUGIN_NAME/bulge.lua)
-* Composite: [add.lua](lua/kernel/composite/PLUGIN_NAME/add.lua)
+* Generator: [gradient.lua](plugins/2015.2560/lua/kernel/generator/PLUGIN_NAME/gradient.lua)
+* Filter: [bulge.lua](plugins/2015.2560/lua/kernel/filter/PLUGIN_NAME/bulge.lua)
+* Composite: [add.lua](plugins/2015.2560/lua/kernel/composite/PLUGIN_NAME/add.lua)
 
 You can use these as starting points for your own custom shader effects. A couple of bookkeeping items to keep in mind:
 
@@ -86,7 +77,6 @@ You can use these as starting points for your own custom shader effects. A coupl
 	3. Update the test harness (`main.lua`) so that you can test your new effect.
 3. You can have more than multiple effects per plugin. 
 
-
 ### Device Testing
 
 Device testing is very critical for several reasons:
@@ -95,7 +85,6 @@ Device testing is very critical for several reasons:
 * Mobile GPU's also have key performance differences that will not be apparent when running in the Corona Simulator. You should verify that the performance of your shader effect is acceptable on a wide range of devices. In general, you will want to run it on the oldest device you plan to support.
 
 [CoronaViewer](https://github.com/coronalabs/CoronaViewer) is a convenient way to develop your shader on a device, offering a similar workflow to the Corona Simulator.
-
 
 ## Corona Store Submission
 
@@ -129,14 +118,13 @@ There is a convenience script that takes care of creating this structure (`build
 
 For example, let's pretend we are submitting this repo's project. We'd like it to start working with daily build 2015.2560, so we would do the following:
 
-* On Mac, from Terminal: `./build.sh 2015.2560`
-* On Windows, from the command prompt: `build.bat 2015.2560`
+* On Mac, from Terminal: `./build.sh`
+* On Windows, from the command prompt: `build.bat`
 
 In both cases, we are assuming the current working directory is the base directory of the project.
 
 By default, the results will be placed in a `build` directory:
 
-* `metadata.json`
 * `plugins/`
 	+ `2015.2560/`
 		- `lua/`
@@ -150,22 +138,4 @@ By default, the results will be placed in a `build` directory:
 				- `generator/`
 					- `PLUGIN_NAME/`
 						- `gradient.lua`
-
-
-
-## Appendix
-
-### Manual Project Creation
-
-The template project in this repo is designed to namespace your custom shader effects.
-
-In order to manually create a new project, you must:
-
-1. copy the contents of this repo
-2. rename files with the appropriate namespace
-3. update the contents of the files with the appropriate namespace
-
-The string token `PLUGIN_NAME` is used in _both_ the names of files/folders and in the contents of files. 
-
-You can manually replace all occurrences of `PLUGIN_NAME` yourself. Be sure to do this inside the contents of files __and__ in the names of files/folders themselves.
-
+* `metadata.json`
