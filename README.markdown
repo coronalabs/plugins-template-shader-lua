@@ -1,5 +1,6 @@
 # Project Template for Shader Effect Plugins
 
+
 ## Overview
 
 This is a template/stationary for those interested in packaging their [custom shader effects](http://docs.coronalabs.com/daily/guide/graphics/customEffects.html) into plugins. You can use these plugins in your own [Corona](https://coronalabs.com/products/corona-sdk/) projects or distribute them in the [Corona Store](https://store.coronalabs.com)
@@ -40,9 +41,14 @@ Your new project should contain the following files and folders:
 + [build.bat](build.bat): Compiles and packages the plugin for distribution using Windows.
 + [build.sh](build.sh): Compiles and packages the plugin for distribution using a Mac.
 * [metadata.json](metadata.json): Contains publisher information, including contact and website data.
-* [plugins/VERSION/lua/](plugins/2015.2560/lua/)
-	+ The files here are included for users building with the Simulator build VERSION or higher.
-	+ As an example, plugins/2015.2560/lua/ requires a minimum SDK version 2015.2560 to be included.
+* [lua/](lua/)
+	+ __Test Harness:__
+		+ [build.settings](lua/build.settings)
+		+ [config.lua](lua/config.lua)
+		+ [main.lua](lua/main.lua)
+	+ __Shader Effect:__
+		+ [kernel/](lua/kernel/)
+			- These are stub/sample effects. See [Shader Effect Files](#shader-effect-files) below.
 
 ## Shader Effect Development
 
@@ -61,9 +67,9 @@ You can also open the test harness in [CoronaViewer](https://github.com/coronala
 
 The new project provides sample implementations of all 3 kinds of effects: 
 
-* Generator: [gradient.lua](plugins/2015.2560/lua/kernel/generator/PLUGIN_NAME/gradient.lua)
-* Filter: [bulge.lua](plugins/2015.2560/lua/kernel/filter/PLUGIN_NAME/bulge.lua)
-* Composite: [add.lua](plugins/2015.2560/lua/kernel/composite/PLUGIN_NAME/add.lua)
+* Generator: [gradient.lua](lua/kernel/generator/PLUGIN_NAME/gradient.lua)
+* Filter: [bulge.lua](lua/kernel/filter/PLUGIN_NAME/bulge.lua)
+* Composite: [add.lua](lua/kernel/composite/PLUGIN_NAME/add.lua)
 
 You can use these as starting points for your own custom shader effects. A couple of bookkeeping items to keep in mind:
 
