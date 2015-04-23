@@ -54,12 +54,12 @@ Your new project should contain the following files and folders:
 
 ### Workflow
 
-For workflow convenience, copy the shader effect code into your sample code. 
+For workflow convenience, the test harness and shader effect code are integrated to simplify shader effect development:
 
-* The test harness is in the [samples/](samples/) folder, including the [samples/main.lua](samples/main.lua) file.
-* The shader effects are located at: [plugins/VERSION/lua/kernel/](plugins/VERSION/lua/kernel/).
+* The test harness is in the [lua/](lua/) folder, including the [lua/main.lua](lua/main.lua) file.
+* The shader effects are in the subfolder of the test harness: [lua/kernel/](lua/kernel/).
 
-By copying or moving `plugins/VERSION/lua/kernel` to `samples/kernel`, you can open the test harness in the Corona Simulator, modify your shader effects, and preview those changes immediately.
+That way, you can open the test harness in the Corona Simulator, modify your shader effects, and preview those changes immediately.
 
 You can also open the test harness in [CoronaViewer](https://github.com/coronalabs/CoronaViewer) to preview those changes immediately on a device.
 
