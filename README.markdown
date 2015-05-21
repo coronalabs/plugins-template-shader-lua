@@ -122,7 +122,7 @@ There is a convenience script that takes care of creating this structure (`build
 
 #### Example
 
-For example, let's pretend we are submitting this repo's project. We'd like it to start working with daily build 2015.2560, so we would do the following:
+For example, let's pretend we are submitting this repo's project. We'd like it to start working with daily build 2015.2642, so we would do the following:
 
 * On Mac, from Terminal: `./build.sh`
 * On Windows, from the command prompt: `build.bat`
@@ -132,7 +132,7 @@ In both cases, we are assuming the current working directory is the base directo
 By default, the results will be placed in a `build` directory:
 
 * `plugins/`
-	+ `2015.2560/`
+	+ `2015.2642/`
 		- `lua/`
 			- `kernel/`
 				- `composite/`
