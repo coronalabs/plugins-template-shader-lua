@@ -1,6 +1,6 @@
 .git
 .gitignore
 .DS_Store
-build.sh
 create_project.sh
 create_project.bat
+tmp
