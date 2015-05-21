@@ -10,6 +10,18 @@ With this project, you can package a single effect or multiple effects together 
 
 ## New projects
 
+### Getting the Template
+
+To get the template files, you need to clone it using Git:
+
+```bash
+cd /working/directory/
+git clone --recursive git@github.com:coronalabs/plugins-template-library-lua.git
+cd /working/directory/plugins-template-library-lua/
+```
+
+The `--recursive` option is important when cloning.
+
 ### Creating your project
 
 To create a new project, we have provided helper scripts that can do the necessary file renaming and string replacements for both Mac OS X and Windows.
