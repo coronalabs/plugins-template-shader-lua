@@ -145,3 +145,9 @@ By default, the results will be placed in a `build` directory:
 					- `PLUGIN_NAME/`
 						- `gradient.lua`
 * `metadata.json`
+
+### Submitting Your Plugin
+
+Once your plugin is complete (including documentation and at least one sample), you can submit it to the Corona Store, using the [Corona Store Application](https://store.coronalabs.com/corona-store-application) page.
+
+Someone from Corona will then get in contact with you to personally help you to put your compiled lua files onto our distribution servers. This is done through a shared BitBucket repository. A basic understanding of Mercurial (hg) is required, and your contact can help you through any questions.
